@@ -1,4 +1,4 @@
-﻿// Lab1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+// Lab1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 #include <stdio.h>
 #include <cmath>
@@ -49,6 +49,14 @@ int main()
     x = V * t * cos(alpha);
     y = H + V * t * value_sin - g * (t * t) / 2;
     T =((V * value_sin) / g) * (1 + (sqrt(1 + (2 * g * H) / (V * V * value_sin * value_sin))));
-    t = t < T ? t : T;
-    cout << "Значение T = " << T;
+    double answer = T < 0 ? t : T;
+    if (answer < 0)
+    {
+        cout << "Камень недостиг дна";
+    }
+    else
+    {
+    cout << "Значение T = " << answer;
+    }
+    return 0;
 }
